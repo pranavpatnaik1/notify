@@ -1,0 +1,107 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profileCluster {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 15vh;
+}
+
+.profileWrapper {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profilePic {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* Circular layout */
+:root {
+  --center-x: 50%;
+  --center-y: 50%;
+  --radius: 100px;
+}
+
+.profile1 {
+  width: 120px;
+  height: 120px;
+  left: calc(var(--center-x) + var(--radius) * cos(0deg));
+  top: calc(var(--center-y) + var(--radius) * sin(0deg));
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.profile2 {
+  width: 90px;
+  height: 90px;
+  left: calc(var(--center-x) + var(--radius) * cos(72deg));
+  top: calc(var(--center-y) + var(--radius) * sin(72deg));
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.profile3 {
+  width: 100px;
+  height: 100px;
+  left: calc(var(--center-x) + var(--radius) * cos(144deg));
+  top: calc(var(--center-y) + var(--radius) * sin(144deg));
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.profile4 {
+  width: 80px;
+  height: 80px;
+  left: calc(var(--center-x) + var(--radius) * cos(216deg));
+  top: calc(var(--center-y) + var(--radius) * sin(216deg));
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.profile5 {
+  width: 70px;
+  height: 70px;
+  left: calc(var(--center-x) + var(--radius) * cos(288deg));
+  top: calc(var(--center-y) + var(--radius) * sin(288deg));
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.inputWrapper {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #cbcccd52;
+  backdrop-filter: blur(4px);
+  border: 2px solid #f2f2f2;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: #CBCCCD;
+  opacity: 0.8;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #CBCCCD;
+} 
