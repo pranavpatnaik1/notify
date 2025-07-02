@@ -17,10 +17,11 @@
 .profileWrapper {
   position: absolute;
   border-radius: 50%;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.3s ease, border 0.3s ease;
   border: 2px solid transparent;
   transform-origin: center center;
+  z-index: 5;
 }
 
 .profilePic {
@@ -118,4 +119,16 @@
 .input:focus {
   outline: none;
   border-color: #CBCCCD;
+}
+
+.speechBubble {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 } 

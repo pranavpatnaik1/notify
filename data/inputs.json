@@ -1,0 +1,21 @@
+[
+  {
+    "input": "hi",
+    "timestamp": "2025-07-02T07:13:34.487Z"
+  },
+  {
+    "input": "Hello from Pranav",
+    "user": "pranav",
+    "timestamp": "2023-10-01T12:00:00Z"
+  },
+  {
+    "input": "Hi there, this is Praneeth",
+    "user": "praneeth",
+    "timestamp": "2023-10-01T12:05:00Z"
+  },
+  {
+    "input": "Greetings from Reshmi",
+    "user": "reshmi",
+    "timestamp": "2023-10-01T12:10:00Z"
+  }
+]
