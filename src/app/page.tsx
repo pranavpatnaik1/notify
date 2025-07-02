@@ -1,55 +1,33 @@
+"use client";
+
 import Image from 'next/image';
 import styles from './page.module.css';
+import { useState } from 'react';
 
 export default function Home() {
+  const [rotationAngle, setRotationAngle] = useState(0);
+
+  const handleProfileClick = (index: number) => {
+    const anglePerProfile = 360 / 5; // Assuming 5 profiles
+    const newAngle = -(index - 1) * anglePerProfile;
+    setRotationAngle(newAngle);
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.profileCluster}>
-        <div className={`${styles.profileWrapper} ${styles.profile1}`}>
-          <Image
-            src="/pranav-pfp-new-notify.png"
-            alt="Profile picture"
-            width={100}
-            height={100}
-            className={styles.profilePic}
-          />
-        </div>
-        <div className={`${styles.profileWrapper} ${styles.profile2}`}>
-          <Image
-            src="/praneeth-pfp-notify.png"
-            alt="Profile picture"
-            width={80}
-            height={80}
-            className={styles.profilePic}
-          />
-        </div>
-        <div className={`${styles.profileWrapper} ${styles.profile3}`}>
-          <Image
-            src="/reshmi-pfp-notify.png"
-            alt="Profile picture"
-            width={90}
-            height={90}
-            className={styles.profilePic}
-          />
-        </div>
-        <div className={`${styles.profileWrapper} ${styles.profile4}`}>
-          <Image
-            src="/other-pranav-pfp-notify.png"
-            alt="Profile picture"
-            width={70}
-            height={70}
-            className={styles.profilePic}
-          />
-        </div>
-        <div className={`${styles.profileWrapper} ${styles.profile5}`}>
-          <Image
-            src="/default-pic-notify.png"
-            alt="Profile picture"
-            width={60}
-            height={60}
-            className={styles.profilePic}
-          />
-        </div>
+      <div className={styles.profileCluster} style={{ transform: `rotate(${rotationAngle}deg)`, transition: 'transform 0.5s ease' }}>
+        {['pranav-pfp-new-notify.png', 'praneeth-pfp-notify.png', 'reshmi-pfp-notify-new.png', 'other-pranav-pfp-notify.png', 'default-pic-notify.png'].map((src, index) => (
+          <div key={index} className={`${styles.profileWrapper} ${styles[`profile${index + 1}`]}`} onClick={() => handleProfileClick(index)}>
+            <Image
+              src={`/${src}`}
+              alt="Profile picture"
+              width={100 - index * 10}
+              height={100 - index * 10}
+              className={styles.profilePic}
+              style={{ transform: `rotate(${-rotationAngle}deg)`, transition: 'transform 0.5s ease' }}
+            />
+          </div>
+        ))}
       </div>
       <div className={styles.inputWrapper}>
         <input 
